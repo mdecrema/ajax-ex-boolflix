@@ -23,6 +23,21 @@ var search = "ritorno al futuro";
 function filtroFilm(value) {
   for (i=0; i<=value.length; i++) {
       console.log(value[i]);
+
+    var film = {
+      "titolo": value[i].title,
+      "titoloOriginale": value[i].original_title,
+      "lingua": value[i].original_language,
+      "valutazione": value[i].vote_average
+    }
+
+    // Stampo i risultati nel template
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+
+    var contenuto = template(film);
+
+    $(".row").append(contenuto);
   }
 }
 
