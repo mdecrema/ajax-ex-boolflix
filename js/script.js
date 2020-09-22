@@ -3,37 +3,28 @@ $(document).ready(function() {
 var search = "ritorno al futuro";
 
   $.ajax({
-    "ulr": "https://api.themoviedb.org/3/search/movie",
+    "url": "https://api.themoviedb.org/3/search/movie",
     "data": {
       "api_key": "d1917066dde7a9b02484a9c4ced0c18e",
       "query": search,
+      //"language": "it-IT"
     },
     "method": "GET",
     "success": function(data) {
-      console.log(data);
+      //console.log(data);
+      var data = data.results;
+      filtroFilm(data);
     },
     "error": function(errore) {
       alert("errore");
     }
   })
 
-
-  /*var film = {
-
+function filtroFilm(value) {
+  for (i=0; i<=value.length; i++) {
+      console.log(value[i]);
   }
-
-
-// Vado a inserire tutto nel tamplate e lo invio all'html
-var source = $("#entry-template").html();
-var template = Handlebars.compile(source);
-
-var contenuto = template(day);
-
-$(".gg-mm").append(contenuto);
-
-*/
-
-
+}
 
 
 
