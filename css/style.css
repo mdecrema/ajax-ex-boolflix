@@ -6,12 +6,16 @@
 
 span {
   font-weight: bold;
+  color: #000;
+  font-size: 18px;
+  margin-left: 3%;
 }
 
 .nav_bar {
   width: 100%;
   height: 70px;
-  background-color: lightyellow;
+  background-color: #AD2020;
+  border-bottom: 5px solid #5A0505;
   position: fixed;
 }
 
@@ -44,14 +48,14 @@ span {
 .film-wrapper {
   width: 100vw;
   min-height: 100vh;
-  border: 1px solid green;
-  background-color: lightgreen;
+  border: 1px solid transparent;
+  background-color: #515050;
 }
 
 .row {
   width: 90%;
   height: calc(100vh / 2);
-  border: 1px solid red;
+  border: 1px solid transparent;
   margin: 7% 5%;
 }
 
@@ -59,15 +63,19 @@ span {
   width: calc((100% / 4) - 3px);
   height: calc(100% - 8%);
   margin: 1% 0;
-  border: 1px solid blue;
+  border: 1px solid #000;
+  border-radius: 3px;
   display: inline-block;
   overflow: hidden;
+  background-color: #BAB4B4;
 }
 
 .lista {
   list-style: none;
+  /*text-align: center;*/
 }
 
 .lista li {
-  font-size: 20px;
+  color: #666565;
+  font-size: 16px;
 }
