@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 
 $("#cerca").click(function() {
+  $(".row").text("");
+
   var search = $("#ricercaFilm").val().toLowerCase();
   if (search != "" && isNaN(search)) {
 
