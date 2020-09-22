@@ -52,6 +52,12 @@ span {
   background-color: #515050;
 }
 
+.film-wrapper::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .row {
   width: 90%;
   height: calc(100vh / 2);
