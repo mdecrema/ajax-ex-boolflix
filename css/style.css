@@ -44,8 +44,14 @@
   margin: 2% 5%;
 }
 
-.previewFilm {
+.preview {
   width: calc(100% / 4);
   height: 100%;
   border: 1px solid blue;
+  display: inline-block;
+}
+
+.lista {
+  list-style: none;
+  
 }

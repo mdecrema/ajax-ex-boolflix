@@ -28,7 +28,10 @@ function filtroFilm(value) {
       "titolo": value[i].title,
       "titoloOriginale": value[i].original_title,
       "lingua": value[i].original_language,
-      "valutazione": value[i].vote_average
+      "valutazione": value[i].vote_average,
+      // Classi css
+      "previewFilm": "preview",
+      "listaInfo": "lista"
     }
 
     // Stampo i risultati nel template
