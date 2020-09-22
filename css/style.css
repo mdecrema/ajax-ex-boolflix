@@ -4,11 +4,15 @@
   margin: 0;
 }
 
+span {
+  font-weight: bold;
+}
+
 .nav_bar {
   width: 100%;
   height: 70px;
   background-color: lightyellow;
-  position: relative;
+  position: fixed;
 }
 
 .wrapper_input {
@@ -24,7 +28,7 @@
 .inputRicerca {
   width: 350px;
   height: 60%;
-  margin: auto;
+  margin-top: 3%;
   text-align: left;
   font-size: 18px;
   padding: 10px;
@@ -39,6 +43,7 @@
 
 .film-wrapper {
   width: 100vw;
+  min-height: 100vh;
   border: 1px solid green;
   background-color: lightgreen;
 }
@@ -47,17 +52,22 @@
   width: 90%;
   height: calc(100vh / 2);
   border: 1px solid red;
-  margin: 2% 5%;
+  margin: 7% 5%;
 }
 
 .preview {
   width: calc((100% / 4) - 3px);
-  height: 100%;
+  height: calc(100% - 8%);
+  margin: 1% 0;
   border: 1px solid blue;
   display: inline-block;
+  overflow: hidden;
 }
 
 .lista {
   list-style: none;
+}
 
+.lista li {
+  font-size: 20px;
 }
