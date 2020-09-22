@@ -1,7 +1,19 @@
 $(document).ready(function() {
 
-
+// Evento click su bottone 'cerca'
 $("#cerca").click(function() {
+  ricerca();
+})
+
+// Evento keypress su tasto 'invio'
+$("#ricercaFilm").keypress(function(event) {
+  if (event.which == 13) {
+    ricerca();
+  }
+});
+
+// Funzione di ricerca film 
+function ricerca() {
   $(".row").text("");
 
   var search = $("#ricercaFilm").val().toLowerCase();
@@ -16,7 +28,7 @@ $("#cerca").click(function() {
     },
     "method": "GET",
     "success": function(data) {
-      //console.log(data);
+      console.log(data);
       var data = data.results;
       filtroFilm(data);
     },
@@ -27,7 +39,7 @@ $("#cerca").click(function() {
 } else {
   alert("Il titolo inserito non è valido");
 }
-})
+}
 
 
 function filtroFilm(value) {
