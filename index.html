@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>BoolFlix</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <script src="https://api.themoviedb.org/3/movie/550?api_key=9124f12911e39417933b30761f6d9567"></script>
   </head>
   <body>
     <!-- Contenitore della lista film -->
@@ -18,8 +19,8 @@
     <!-- Template preview film -->
     <script id="entry-template" type="text/x-handlebars-template">
 
-    <div class="previewFilm">
-      <ul class="listaInfo">
+    <div class={{previewFilm}}>
+      <ul class={{listaInfo}}>
         <li>{{titolo}}</li>
         <li>{{genere}}</li>
       </ul>

@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.film-wrapper {
+  width: 100vw;
+  border: 1px solid green;
+  background-color: lightgreen;
+}
+
+.row {
+  width: 90%;
+  height: calc(100vh / 2);
+  border: 1px solid red;
+  margin: 2% 5%;
+}
+
+.previewFilm {
+  width: calc(100% / 4);
+  height: 100%;
+  border: 1px solid blue;
+}
