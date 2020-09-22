@@ -3,6 +3,7 @@ $(document).ready(function() {
 
 $("#cerca").click(function() {
   var search = $("#ricercaFilm").val().toLowerCase();
+  if (search != "" && isNaN(search)) {
 
   $.ajax({
     "url": "https://api.themoviedb.org/3/search/movie",
@@ -21,6 +22,11 @@ $("#cerca").click(function() {
       alert("errore");
     }
   })
+
+} else {
+  alert("Il titolo inserito non è valido");
+}
+
 })
 
 
