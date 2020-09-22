@@ -8,14 +8,17 @@
   width: 100%;
   height: 70px;
   background-color: lightyellow;
+  position: relative;
 }
 
 .wrapper_input {
-  width: 400px;
+  width: 450px;
   height: 100%;
-  border: 3px solid green;
   margin: auto;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .inputRicerca {
@@ -25,10 +28,13 @@
   text-align: left;
   font-size: 18px;
   padding: 10px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.btn-cerca {
+  width: 80px;
+  height: 60%;
+  display: inline-block;
 }
 
 .film-wrapper {
@@ -53,5 +59,5 @@
 
 .lista {
   list-style: none;
-  
+
 }
