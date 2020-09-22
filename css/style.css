@@ -51,7 +51,7 @@
 }
 
 .preview {
-  width: calc(100% / 4);
+  width: calc((100% / 4) - 3px);
   height: 100%;
   border: 1px solid blue;
   display: inline-block;

@@ -22,11 +22,9 @@ $("#cerca").click(function() {
       alert("errore");
     }
   })
-
 } else {
   alert("Il titolo inserito non è valido");
 }
-
 })
 
 
@@ -51,6 +49,7 @@ function filtroFilm(value) {
     var contenuto = template(film);
 
     $(".row").append(contenuto);
+    $("#ricercaFilm").val("");
   }
 }
 
