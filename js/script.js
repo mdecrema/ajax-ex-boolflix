@@ -94,18 +94,21 @@ function filtroFilm(value) {
   for (i=0; i<=value.length; i++) {
       console.log(value[i]);
 
-      var getStar = voto(value[i].vote_average);
+      var average = value[i].vote_average;
+      var language = value[i].original_language;
 
     var film = {
       "titolo": value[i].title,
       "titoloOriginale": value[i].original_title,
+      "img-band": flag(language),
       "lingua": value[i].original_language,
       "valutazione": value[i].vote_average,
-      "star": getStar,
+      "star": voto(average),
       //value[i].vote_average / 2,
       // Classi css
       "previewFilm": "preview",
       "listaInfo": "lista",
+      "bandiera": "flag",
       "voto": "votazione"
     }
 
@@ -126,16 +129,18 @@ function filtroSeries(value2) {
   for (i=0; i<=value2.length; i++) {
       console.log(value2[i]);
 
+    var language2 = value2[i].original_language;
+
     var serie = {
       "titolo": value2[i].name,
       "titoloOriginale": value2[i].original_name,
-      "lingua": value2[i].original_language,
+      "img-band": flag(language2),
       "valutazione": value2[i].vote_average,
 
       // Classi css
       "previewFilm": "preview",
       "listaInfo": "lista",
-      "star": "stella",
+      "bandiera": "flag",
       "voto": "votazione",
     }
 
@@ -149,6 +154,11 @@ function filtroSeries(value2) {
     $("#ricercaFilm").val("");
     $(".preview").addClass("active");
   }
+}
+
+// Funzione immette la bandiera corrispondente alla nazione della lingua orginale
+function flag(lingua) {
+  return "img/"+lingua+".svg";
 }
 
 // Animazione menu
