@@ -94,3 +94,11 @@ span {
   color: #666565;
   font-size: 16px;
 }
+
+.votazione i {
+  color: #fff;
+}
+
+.active {
+  color: yellow;
+}

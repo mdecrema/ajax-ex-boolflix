@@ -12,17 +12,35 @@ $("#ricercaFilm").keypress(function(event) {
   }
 });
 
-// Funzione di ricerca film e serie
+// Funzione di ricerca film e serie tv
 function ricerca() {
   $(".row").text("");
-
+var v = $(".valutazione").text();
 var search = $("#ricercaFilm").val().toLowerCase();
   if (search != "" && isNaN(search)) {
     movies(search);
     series(search);
+    setTimeout(function() {
+      voto(v);
+    }, 5);
   } else {
     alert("Il titolo inserito non è valido");
   }
+  }
+
+  function voto(num) {
+   Math.round((num / 2));
+   if (num = 5) {
+     $(".s-1, .s-2, .s-3, .s-4, .s-5").css({color: "yellow"});
+   } else if ( num > 4) {
+     $(".s-1, .s-2, .s-3, .s-4").css({color: "yellow"});
+   } else if (num > 3) {
+     $(".s-1, .s-2, .s-3").css({color: "yellow"});
+   } else if (num > 2) {
+     $(".s-1, .s-2").css({color: "yellow"});
+   } else if (num > 1) {
+     $(".s-1").css({color: "yellow"});
+   }
   }
 
 
@@ -78,9 +96,11 @@ function filtroFilm(value) {
       "titoloOriginale": value[i].original_title,
       "lingua": value[i].original_language,
       "valutazione": value[i].vote_average,
+      //value[i].vote_average / 2,
       // Classi css
       "previewFilm": "preview",
-      "listaInfo": "lista"
+      "listaInfo": "lista",
+      "voto": "votazione"
     }
 
     // Stampo i risultati nel template
@@ -94,6 +114,7 @@ function filtroFilm(value) {
   }
 }
 
+
 // Template serie tv
 function filtroSeries(value2) {
   for (i=0; i<=value2.length; i++) {
@@ -103,7 +124,9 @@ function filtroSeries(value2) {
       "titolo": value2[i].name,
       "titoloOriginale": value2[i].original_name,
       "lingua": value2[i].original_language,
-      "valutazione": value2[i].vote_average,
+      "valutazione":
+        value2[i].vote_average,
+
       // Classi css
       "previewFilm": "preview",
       "listaInfo": "lista"

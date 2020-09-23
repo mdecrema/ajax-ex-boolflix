@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>BoolFlix</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://api.themoviedb.org/3/movie/550?api_key=9124f12911e39417933b30761f6d9567"></script>
@@ -36,7 +37,10 @@
         <li>Titolo: <span>{{titolo}}</span></li>
         <li>Titolo originale: <span>{{titoloOriginale}}</span></li>
         <li>Lingua: <span>{{lingua}}</span></li>
-        <li>Review: <span>{{valutazione}}</span></li>
+        <!-- <li>Review: <span>{{valutazione}}</span></li> -->
+        <li class={{voto}}>{{valutazione}}<i class="fas fa-star star s-1"></i><i class="fas fa-star star s-2">
+        </i><i class="fas fa-star star s-3"></i><i class="fas fa-star star s-4">
+        </i><i class="fas fa-star star s-5"></i></li>
       </ul>
     </div>
 
