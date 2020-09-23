@@ -15,12 +15,10 @@ $("#ricercaFilm").keypress(function(event) {
 // Funzione di ricerca film e serie tv
 function ricerca() {
   $(".row").text("");
-var v = $(".valutazione").text();
 var search = $("#ricercaFilm").val().toLowerCase();
   if (search != "" && isNaN(search)) {
     movies(search);
     series(search);
-    voto(v);
   } else {
     alert("Il titolo inserito non è valido");
   }
@@ -28,18 +26,17 @@ var search = $("#ricercaFilm").val().toLowerCase();
 
 // Funzione colora stelle a seconda del voto
   function voto(num) {
-   Math.round((num / 2));
-   if (num = 5) {
-     $(".s1, .s2, .s3, .s4, .s5").css({color: "yellow"});
-   } else if ( num > 4) {
-     $(".s1, .s2, .s3, .s4").css({color: "yellow"});
-   } else if (num > 3) {
-     $(".s1, .s2, .s3").css({color: "yellow"});
-   } else if (num > 2) {
-     $(".s1, .s2").css({color: "yellow"});
-   } else if (num > 1) {
-     $(".s1").css({color: "yellow"});
+   var num = Math.round(num / 2);
+   var stars= "";
+   for (i=1; i<=5; i++) {
+     if (i<=num) {
+       var star = '<i class="far fa-star"></i>';
+     } else {
+       var star = '<i class="fas fa-star"></i>';
+     }
+     stars += star;
    }
+   return stars;
   }
 
 
@@ -90,11 +87,13 @@ function filtroFilm(value) {
   for (i=0; i<=value.length; i++) {
       console.log(value[i]);
 
+      var getStar = voto(value[i].vote_average);
+
     var film = {
       "titolo": value[i].title,
       "titoloOriginale": value[i].original_title,
-      "lingua": value[i].original_language,
-      "valutazione": value[i].vote_average,
+      "lingua": img(),
+      "valutazione": getStar,
       //value[i].vote_average / 2,
       // Classi css
       "previewFilm": "preview",
@@ -124,8 +123,7 @@ function filtroSeries(value2) {
       "titolo": value2[i].name,
       "titoloOriginale": value2[i].original_name,
       "lingua": value2[i].original_language,
-      "valutazione":
-        value2[i].vote_average,
+      "valutazione": value2[i].vote_average,
 
       // Classi css
       "previewFilm": "preview",
@@ -146,6 +144,9 @@ function filtroSeries(value2) {
   }
 }
 
+function img() {
+
+}
 
 
   // Fine codice

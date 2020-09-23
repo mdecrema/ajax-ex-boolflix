@@ -84,7 +84,7 @@ span {
   border-radius: 3px;
   display: inline-block;
   overflow: hidden;
-  background-color: grey;
+  background-color: #fff;
   padding: 20px;
   position: relative;
   z-index: 1;
@@ -100,6 +100,7 @@ span {
 }
 
 .lista li {
+  min-height: 40px;
   color: #666565;
   font-size: 16px;
 }
