@@ -28,6 +28,8 @@ span {
   width: 200px;
   height: 70px;
   overflow: hidden;
+  float: right;
+  margin-right: 3%;
 }
 
 #netflixLogo {
@@ -36,7 +38,7 @@ span {
 }
 
 .wrapper_input {
-  width: 650px;
+  width: 450px;
   height: 100%;
   margin: auto;
   border: 1px solid transparent;
@@ -48,7 +50,7 @@ span {
 
 .inputRicerca {
   width: 350px;
-  height: 60%;
+  height: 50%;
   margin-top: 3%;
   text-align: left;
   font-size: 18px;
@@ -58,12 +60,38 @@ span {
 
 .btn-cerca {
   width: 80px;
-  height: 60%;
+  height: 50%;
   display: inline-block;
 }
 
 #gen_film, #gen_serie {
   margin-left: 30px;
+}
+
+.menu {
+  width: 100vw;
+  height: 50px;
+  background-color: #5A0505;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 70px;
+}
+
+.menu ul {
+  width: 90%;
+  height: 60px;
+  border: 1px solid blue;
+  margin: auto;
+}
+
+.menu ul li {
+  list-style: none;
+  min-width: 150px;
+  height: 20px;
+  border: 1px solid green;
+  display: inline;
+  padding: 5px 50px;
 }
 
 .film-wrapper {
