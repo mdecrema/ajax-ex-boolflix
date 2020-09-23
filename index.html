@@ -5,7 +5,7 @@
     <title>BoolFlix</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Prompt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Parisienne&family=Prompt&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://api.themoviedb.org/3/movie/550?api_key=9124f12911e39417933b30761f6d9567"></script>
@@ -13,7 +13,9 @@
   <body>
     <!-- Menu principale -->
     <header>
+
       <nav class="nav_bar">
+        <div class="box">
         <div class="logo">
           <img id="netflixLogo" src="img/netflixLogo.png" alt="" />
         </div>
@@ -23,18 +25,20 @@
           <!--<input id="gen_film" class="" type="checkbox" value="0" checked/> FILM
           <input id="gen_serie" class="" type="checkbox" value="1" /> SERIE -->
         </div>
-        <div class="menu hidden">
-          <ul>
-            <li>Home</li>
-            <li>Anteprime</li>
-            <li>Nuove uscite</li>
-            <li>Top 10</li>
-            <li>Commedie</li>
-            <li>Originali Netflix</li>
-            <li>Premiati</li>
-          </ul>
         </div>
       </nav>
+      <div class="menu hidden">
+        <ul>
+          <li>Home</li>
+          <li>Anteprime</li>
+          <li>Nuove uscite</li>
+          <li>Top 10</li>
+          <li>Commedie</li>
+          <li>Originali Netflix</li>
+          <li>Premiati</li>
+        </ul>
+      </div>
+
     </header>
     <!-- Contenitore della lista film -->
     <div class="film-wrapper">

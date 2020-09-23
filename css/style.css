@@ -15,13 +15,26 @@ span {
   display: inline-block;
 }
 
+.box {
+  width: 100vw;
+  height: 140px;
+  /*border: 1px solid blue;*/
+  z-index: 6;
+}
+
 .nav_bar {
   width: 100%;
   height: 70px;
-  background-color: #AD2020;
+  background-color: #AD2020 /*#AE121C*/;
+  box-shadow: 0 1px 30px red;
   border-bottom: 8px solid #5A0505;
   position: fixed;
-  z-index: 2;
+  z-index: 5;
+}
+
+.nav_bar.change {
+  border-bottom: 8px solid darkgrey;
+  box-shadow: 0 0 0;
 }
 
 .logo {
@@ -72,26 +85,34 @@ span {
   width: 100vw;
   height: 50px;
   background-color: #5A0505;
+  box-shadow: 0 5px 15px grey;
   color: #fff;
   position: absolute;
   left: 0;
-  top: 70px;
+  top: 0;
 }
 
 .menu ul {
   width: 90%;
-  height: 60px;
-  border: 1px solid blue;
-  margin: auto;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .menu ul li {
   list-style: none;
   min-width: 150px;
-  height: 20px;
-  border: 1px solid green;
+  height: 100%;
+  line-height: 50px;
   display: inline;
   padding: 5px 50px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.menu ul li:hover {
+  font-size: 24px;
 }
 
 .film-wrapper {

@@ -151,8 +151,31 @@ function filtroSeries(value2) {
   }
 }
 
-function img() {
+// Animazione menu
+$(".nav_bar").mouseenter(function() {
+  apriMenu();
+})
 
+$(".box").mouseout(function() {
+  chiudiMenu();
+})
+
+function apriMenu() {
+  var counter = 0;
+  setInterval(function() {
+    if (counter == 70) {
+      clearInterval();
+    } else {
+      counter++;
+      $(".menu").css({marginTop: counter+"px"});
+      $(".nav_bar").css({borderBottom: "2px solid darkgrey"});
+  }
+}, 5);
+}
+
+function chiudiMenu() {
+  $(".menu").css({marginTop: "0px"});
+  $(".nav_bar").css({borderBottom: "8px solid #5A0505"});
 }
 
 
