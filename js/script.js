@@ -20,26 +20,25 @@ var search = $("#ricercaFilm").val().toLowerCase();
   if (search != "" && isNaN(search)) {
     movies(search);
     series(search);
-    setTimeout(function() {
-      voto(v);
-    }, 5);
+    voto(v);
   } else {
     alert("Il titolo inserito non è valido");
   }
   }
 
+// Funzione colora stelle a seconda del voto
   function voto(num) {
    Math.round((num / 2));
    if (num = 5) {
-     $(".s-1, .s-2, .s-3, .s-4, .s-5").css({color: "yellow"});
+     $(".s1, .s2, .s3, .s4, .s5").css({color: "yellow"});
    } else if ( num > 4) {
-     $(".s-1, .s-2, .s-3, .s-4").css({color: "yellow"});
+     $(".s1, .s2, .s3, .s4").css({color: "yellow"});
    } else if (num > 3) {
-     $(".s-1, .s-2, .s-3").css({color: "yellow"});
+     $(".s1, .s2, .s3").css({color: "yellow"});
    } else if (num > 2) {
-     $(".s-1, .s-2").css({color: "yellow"});
+     $(".s1, .s2").css({color: "yellow"});
    } else if (num > 1) {
-     $(".s-1").css({color: "yellow"});
+     $(".s1").css({color: "yellow"});
    }
   }
 
@@ -100,6 +99,7 @@ function filtroFilm(value) {
       // Classi css
       "previewFilm": "preview",
       "listaInfo": "lista",
+      "star": "stella",
       "voto": "votazione"
     }
 
@@ -129,7 +129,9 @@ function filtroSeries(value2) {
 
       // Classi css
       "previewFilm": "preview",
-      "listaInfo": "lista"
+      "listaInfo": "lista",
+      "star": "stella",
+      "voto": "votazione",
     }
 
     // Stampo i risultati nel template
@@ -140,6 +142,7 @@ function filtroSeries(value2) {
 
     $(".row").append(contenuto);
     $("#ricercaFilm").val("");
+    $(".preview").addClass("active");
   }
 }
 

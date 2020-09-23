@@ -38,10 +38,12 @@
         <li>Titolo originale: <span>{{titoloOriginale}}</span></li>
         <li>Lingua: <span>{{lingua}}</span></li>
         <!-- <li>Review: <span>{{valutazione}}</span></li> -->
-        <li class={{voto}}>{{valutazione}}<i class="fas fa-star star s-1"></i><i class="fas fa-star star s-2">
-        </i><i class="fas fa-star star s-3"></i><i class="fas fa-star star s-4">
-        </i><i class="fas fa-star star s-5"></i></li>
       </ul>
+        <div class={{voto}}>
+          {{valutazione}}<i class="fas fa-star {{star}} {{s-1}}"></i><i class="fas fa-star {{star}} {{s-2}}">
+          </i><i class="fas fa-star {{star}} {{s-3}}"></i><i class="fas fa-star {{star}} {{s-4}}">
+          </i><i class="fas fa-star {{star}} {{s-5}}"></i>
+        </div>
     </div>
 
     </script>
