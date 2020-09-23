@@ -109,7 +109,7 @@ function filtroFilm(value) {
       "previewFilm": "preview",
       "listaInfo": "lista",
       "bandiera": "flag",
-      "voto": "votazione"
+      "informazioni": "info"
     }
 
     // Stampo i risultati nel template
@@ -142,6 +142,7 @@ function filtroSeries(value2) {
       "listaInfo": "lista",
       "bandiera": "flag",
       "voto": "votazione",
+      "informazioni": "info"
     }
 
     // Stampo i risultati nel template
@@ -152,7 +153,7 @@ function filtroSeries(value2) {
 
     $(".row").append(contenuto);
     $("#ricercaFilm").val("");
-    $(".preview").addClass("active");
+    $(this).addClass("active");
   }
 }
 
