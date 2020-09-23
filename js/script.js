@@ -28,17 +28,24 @@ var search = $("#ricercaFilm").val().toLowerCase();
   function voto(num) {
    var num = Math.round(num / 2);
    var stars= "";
-   for (i=1; i<=5; i++) {
+   for (var i=1; i<=5; i++) {
      if (i<=num) {
-       var star = '<i class="far fa-star"></i>';
-     } else {
        var star = '<i class="fas fa-star"></i>';
+     } else {
+       var star = '<i class="far fa-star"></i>';
      }
      stars += star;
    }
    return stars;
   }
 
+// Funzione cambia bandiera a seconda della lingua
+function flag(lingua) {
+  if (lingua == "en") {
+    $(".flag").attr("src", "img/1.svg");
+    // $(".info_chat img").attr("src", img);
+  }
+}
 
 // API movies
 function movies(element2) {
@@ -92,7 +99,7 @@ function filtroFilm(value) {
     var film = {
       "titolo": value[i].title,
       "titoloOriginale": value[i].original_title,
-      "lingua": img(),
+      "lingua": value[i].original_language,
       "valutazione": getStar,
       //value[i].vote_average / 2,
       // Classi css
