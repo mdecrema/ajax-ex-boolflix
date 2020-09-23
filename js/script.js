@@ -100,12 +100,12 @@ function filtroFilm(value) {
       "titolo": value[i].title,
       "titoloOriginale": value[i].original_title,
       "lingua": value[i].original_language,
-      "valutazione": getStar,
+      "valutazione": value[i].vote_average,
+      "star": getStar,
       //value[i].vote_average / 2,
       // Classi css
       "previewFilm": "preview",
       "listaInfo": "lista",
-      "star": "stella",
       "voto": "votazione"
     }
 

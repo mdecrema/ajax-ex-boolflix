@@ -5,6 +5,7 @@
     <title>BoolFlix</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Prompt&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://api.themoviedb.org/3/movie/550?api_key=9124f12911e39417933b30761f6d9567"></script>
@@ -13,6 +14,9 @@
     <!-- Menu principale -->
     <header>
       <nav class="nav_bar">
+        <div class="logo">
+          <img id="netflixLogo" src="img/netflixLogo.png" alt="" />
+        </div>
         <div class="wrapper_input">
           <input id="ricercaFilm" class="inputRicerca" type="input" placeholder="Cerca un titolo"/>
           <button id="cerca" class="btn-cerca" type="submit">CERCA</button>
@@ -21,9 +25,12 @@
         </div>
       </nav>
     </header>
-
     <!-- Contenitore della lista film -->
     <div class="film-wrapper">
+      <div class="titolo">
+        <h1>Film</h1>
+      </div>
+
       <div class="row">
 
       </div>
@@ -40,7 +47,7 @@
         <!-- <li>Review: <span>{{valutazione}}</span></li> -->
       </ul>
         <div class="{{voto}}">
-          {{valutazione}}
+          {{valutazione}}{{star}}
         </div>
     </div>
 

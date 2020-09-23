@@ -24,6 +24,17 @@ span {
   z-index: 2;
 }
 
+.logo {
+  width: 200px;
+  height: 70px;
+  overflow: hidden;
+}
+
+#netflixLogo {
+  width: 100%;
+  height: 85%;
+}
+
 .wrapper_input {
   width: 650px;
   height: 100%;
@@ -63,6 +74,18 @@ span {
   background-color: /*#290000*/#1b0000;
 }
 
+.titolo {
+  height: 150px;
+  margin-top: 5%;
+  padding: 10px 50px;
+}
+
+h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: 100px;
+  color: #fff;
+}
+
 .film-wrapper::after {
   content: "";
   display: table;
@@ -73,7 +96,7 @@ span {
   width: 90%;
   height: calc(100vh / 2);
   border: 1px solid transparent;
-  margin: 7% 5%;
+  margin: 2% 5%;
 }
 
 .preview {
@@ -86,6 +109,7 @@ span {
   overflow: hidden;
   background-color: #fff;
   padding: 20px;
+  font-family: 'Prompt', sans-serif;
   position: relative;
   z-index: 1;
 }
@@ -113,10 +137,6 @@ span {
   left: 0;
   bottom: 0;
   padding: 0 20px;
-}
-
-.stella {
-  color: #fff;
 }
 
 .flag {
