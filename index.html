@@ -58,13 +58,12 @@
     <script id="entry-template" type="text/x-handlebars-template">
 
     <div class="{{previewFilm}}">
-
         <h3><span>{{titolo}}</span></h3>
         <h4 class="f-size">{{titoloOriginale}}</h4>
-
+        <div class="copertina"><img id="cop" src="{{img-cop}}" alt="" /></div>
         <div class="{{informazioni}}">
           Lingua: <img class="{{bandiera}}" src="{{img-band}}" alt="{{lingua}}"/><br />
-          {{valutazione}}{{star}}
+          {{valutazione}}{{{star}}}
         </div>
     </div>
 
