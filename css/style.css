@@ -168,8 +168,8 @@ h1 {
   width: calc((100% / 4) - 3px);
   height: calc(100% - 8%);
   margin: 1% 0;
-  border: 3px solid grey;
-  border-radius: 10px;
+  border: 2px solid grey;
+  border-radius: 5px;
   display: inline-block;
   overflow: hidden;
   background-color: #fff;
@@ -196,17 +196,6 @@ h1 {
 
 .titolo_copertina {
   height: 30%;
-}
-
-.h3 {
-
-}
-
-.h4 {
-  min-height: 40px;
-  color: #666565;
-  font-size: 16px;
-
 }
 
 .copertina {

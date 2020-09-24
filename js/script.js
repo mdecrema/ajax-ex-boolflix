@@ -72,7 +72,7 @@ function movies(element2) {
     "success": function(data) {
       console.log(data);
       var dataFilms = data.results;
-      filtroFilm(dataFilms);
+      filtroRisultati("film", dataFilms);
     },
     "error": function(errore) {
       alert("errore");
@@ -93,7 +93,7 @@ function series(element) {
     "success": function(data) {
       console.log(data);
       var dataSeries= data.results;
-      filtroSeries(dataSeries);
+      filtroRisultati("serie", dataSeries);
     },
     "error": function(errore) {
       alert("errore");
@@ -102,16 +102,26 @@ function series(element) {
 }
 
 // Template film
-function filtroFilm(value) {
+function filtroRisultati(type, value) {
   for (i=0; i<=value.length; i++) {
       console.log(value[i]);
 
       var average = value[i].vote_average;
       var language = value[i].original_language;
 
+      var titolo;
+
+      if (type == "film") {
+        titolo = value[i].title;
+        titoloOriginale = value[i].original_title;
+      } else if (type == "serie") {
+        titolo = value[i].name
+        titoloOriginale = value[i].original_name;
+      }
+
     var film = {
-      "titolo": title(value[i].title, 30),
-      "titoloOriginale": title(value[i].original_title, 15),
+      "titolo": title(titolo, 30),
+      "titoloOriginale": title(titolo, 15),
       "img-cop": "https://image.tmdb.org/t/p/w200/"+value[i].poster_path,
       "img-band": flag(language),
       "lingua": value[i].original_language,
@@ -138,6 +148,7 @@ function filtroFilm(value) {
 
 
 // Template serie tv
+/*
 function filtroSeries(value2) {
   for (i=0; i<=value2.length; i++) {
       console.log(value2[i]);
@@ -171,7 +182,7 @@ function filtroSeries(value2) {
     $("#ricercaFilm").val("");
     $(this).addClass("active");
   }
-}
+}*/
 
 // Animazione menu
 $(".nav_bar").mouseenter(function() {
