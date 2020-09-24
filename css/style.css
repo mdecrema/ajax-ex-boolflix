@@ -4,11 +4,12 @@
   margin: 0;
 }
 
-span {
-  font-weight: bold;
-  color: #000;
-  font-size: 24px;
-}
+/* Font family utili
+font-family: 'Bungee Outline', cursive;
+font-family: 'Ewert', cursive;
+font-family: 'Jacques Francois Shadow', cursive;
+font-family: 'Londrina Outline', cursive;
+font-family: 'Monoton', cursive; */
 
 .inline_bl {
   display: inline-block;
@@ -21,10 +22,11 @@ span {
   z-index: 6;
 }
 
+/* Navigation bar principale */
 .nav_bar {
   width: 100%;
   height: 70px;
-  background-color: #AD2020 /*#AE121C*/;
+  background-color: /*#AD2020*/#AE121C;
   box-shadow: 0 1px 30px red;
   border-bottom: 8px solid #5A0505;
   position: fixed;
@@ -51,6 +53,7 @@ span {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .logo {
@@ -62,8 +65,9 @@ span {
 }
 
 #netflixLogo {
-  width: 100%;
+  width: 110%;
   height: 85%;
+  margin-left: -7%;
 }
 
 .wrapper_input {
@@ -97,6 +101,7 @@ span {
   margin-left: 30px;
 }
 
+/* Menu Nascosto */
 .menu {
   width: 100vw;
   height: 50px;
@@ -131,14 +136,23 @@ span {
   font-size: 24px;
 }
 
+/* Contenitore delle liste di film e serie */
 .film-wrapper {
   width: 100vw;
   min-height: 100vh;
   border: 1px solid transparent;
   overflow-y: scroll;
   background-color: /*#290000*/#1b0000;
+  position: relative;
 }
 
+.film-wrapper::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Titolo principale */
 .titolo {
   height: 150px;
   margin-top: 5%;
@@ -151,11 +165,29 @@ h1 {
   color: #fff;
 }
 
-.film-wrapper::after {
-  content: "";
-  display: table;
-  clear: both;
+/*.netflix_anim {
+  width: 70%;
+  height: 250px;
+  border: 1px solid blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.lett {
+  display: inline-block;
+  font-size: 200px;
+  font-family: 'Bebas Neue', cursive;
+  color: red;
+  text-shadow: 15px 10px 2px #000;
+  padding: 0 3%;
+}
+
+.n {
+  border: 1px solid blue;
+  margin-top: -1000px;
+}*/
 
 .row {
   width: 90%;
@@ -164,6 +196,7 @@ h1 {
   margin: 2% 5%;
 }
 
+/* Template contenitore film/serie */
 .preview {
   width: calc((100% / 4) - 3px);
   height: calc(100% - 8%);
@@ -180,9 +213,8 @@ h1 {
   transition: 0.4s;
 }
 
-.preview:hover {
-  background-color: #fff;
-  background: linear-gradient(135deg, rgba(96,96,96,1) 0%, rgba(184,183,183,1) 63%, rgba(240,240,240,1) 78%, rgba(88,88,88,1) 100%);
+.preview:hover .descrizione {
+  display: block;
 }
 
 .preview.active {
@@ -194,8 +226,15 @@ h1 {
   /*text-align: center;*/
 }
 
+h3 {
+  font-weight: bold;
+  color: #000;
+  font-size: 24px;
+}
+
 .titolo_copertina {
   height: 30%;
+  overflow: hidden;
 }
 
 .copertina {
@@ -203,6 +242,7 @@ h1 {
   height: 50%;
   overflow: hidden;
   position: relative;
+  box-shadow: 3px 3px 5px grey;
   /*display: flex;
   justify-content: space-around;*/
 }
@@ -216,8 +256,9 @@ h1 {
 
 .info {
   width: 100%;
-  height: 15%;
+  height: 30%;
   position: absolute;
+  font-size: 14px;
   left: 0;
   bottom: 0;
   padding: 0 20px;
@@ -227,6 +268,37 @@ h1 {
 .flag {
   width: 30px;
   height: 20px;
+}
+
+.descrizione {
+  width: 100%;
+  height: 100%;
+  border: 2px solid grey;
+  border-radius: 5px;
+  display: inline-block;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(96,96,96,1) 0%, rgba(184,183,183,1) 63%, rgba(240,240,240,1) 78%, rgba(88,88,88,1) 100%);
+  padding: 5% 5%;
+  font-size: 16px;
+  font-family: 'Prompt', sans-serif;
+  color: #000;
+  text-align: justify;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.virgolette {
+  border: 1px solid blue;
+  width: 50%;
+  height: 30%;
+  color: #fff;
+  font-size: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 

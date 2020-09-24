@@ -27,14 +27,24 @@ function ricerca() {
   }
 
 // Funzione per abbreviare il titolo nel caso sia più lungo di 30 caratteri
-  function title(titolo, num) {
+  function title(titolo, num, type) {
+    var add = "";
+    if (type == "normale") {
+      add = "...";
+    } else if (type == "paragrafo") {
+      add = "...<br><a href=''>continua a leggere</a>";
+    } else {
+      add;
+    }
+
+
     var nuovoTesto = "";
     var lunParola = titolo.length;
       if (lunParola >= num) {
         for (var i = 0; i<num; i++) {
         nuovoTesto += titolo[i];
       }
-      return nuovoTesto+"...";
+      return nuovoTesto+add;
     } else {
       nuovoTesto += titolo;
       return nuovoTesto;
@@ -72,7 +82,7 @@ function movies(element2) {
     },
     "method": "GET",
     "success": function(data) {
-      //console.log(data);
+      console.log(dataFilms);
       var dataFilms = data.results;
       filtroRisultati("film", dataFilms);
     },
@@ -112,23 +122,28 @@ function filtroRisultati(type, value) {
       var language = value[i].original_language;
 
       var titolo;
+      var release;
 
       if (type == "film") {
         titolo = value[i].title;
         titoloOriginale = value[i].original_title;
+        release = value[i].release_date;
       } else if (type == "serie") {
         titolo = value[i].name
         titoloOriginale = value[i].original_name;
+        release = value[i].first_air_date;
       }
 
     var film = {
-      "titolo": title(titolo, 30),
+      "titolo": title(titolo, 30, "normale"),
       "titoloOriginale": title(titolo, 15),
       "img-cop": "https://image.tmdb.org/t/p/w200/"+value[i].poster_path,
       "img-band": flag(language),
       "lingua": value[i].original_language,
       "valutazione": value[i].vote_average,
       "star": voto(average),
+      "data": title(release, 4, "anno"),
+      "overview": title(value[i].overview, 250, "paragrafo"),
       // Classi css
       "previewFilm": "preview",
       "listaInfo": "lista",
@@ -184,6 +199,7 @@ function filtroSeries(value2) {
   }
 }*/
 
+// Animazioni grafiche
 // Animazione menu
 $(".nav_bar").mouseenter(function() {
   apriMenu();
@@ -211,6 +227,13 @@ function chiudiMenu() {
   $(".nav_bar").css({borderBottom: "8px solid #5A0505"});
 }
 
+/*function animationText() {
+  setTimeout(function() {
+    setInterval(function() {
+
+    },4000);
+}, 2000);
+}*/
 
 
   // Fine codice
