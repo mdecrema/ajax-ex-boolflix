@@ -25,11 +25,11 @@ var search = $("#ricercaFilm").val().toLowerCase();
   }
 
 // Funzione per abbreviare il titolo nel caso sia più lungo di 30 caratteri
-  function title(titolo) {
+  function title(titolo, num) {
     var nuovoTesto = "";
     var lunParola = titolo.length;
-      if (lunParola >= 30) {
-        for (var i = 0; i<30; i++) {
+      if (lunParola >= num) {
+        for (var i = 0; i<num; i++) {
         nuovoTesto += titolo[i];
       }
       return nuovoTesto+"...";
@@ -58,14 +58,6 @@ var search = $("#ricercaFilm").val().toLowerCase();
    }
    return stars;
   }
-
-// Funzione cambia bandiera a seconda della lingua
-function flag(lingua) {
-  if (lingua == "en") {
-    $(".flag").attr("src", "img/1.svg");
-    // $(".info_chat img").attr("src", img);
-  }
-}
 
 // API movies
 function movies(element2) {
@@ -118,8 +110,8 @@ function filtroFilm(value) {
       var language = value[i].original_language;
 
     var film = {
-      "titolo": title(value[i].title),
-      "titoloOriginale": value[i].original_title,
+      "titolo": title(value[i].title, 30),
+      "titoloOriginale": title(value[i].original_title, 15),
       "img-cop": "https://image.tmdb.org/t/p/w200/"+value[i].poster_path,
       "img-band": flag(language),
       "lingua": value[i].original_language,
@@ -154,8 +146,8 @@ function filtroSeries(value2) {
     var average = value2[i].vote_average;
 
     var serie = {
-      "titolo": title(value2[i].name),
-      "titoloOriginale": value2[i].original_name,
+      "titolo": title(value2[i].name, 30),
+      "titoloOriginale": title(value2[i].original_name, 15),
       "img-cop": "https://image.tmdb.org/t/p/w200/"+value2[i].poster_path,
       "img-band": flag(language2),
       "lingua": value2[i].original_language,
