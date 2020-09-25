@@ -51,20 +51,36 @@ function ricerca() {
   }
 
 // Funzione che stampa img copertina
-function poster(link) {
+function image(value, type) {
   var img = "";
-  if (link == undefined) {
-    img += "img/no_poster01.png";
-  } else {
-    img += "https://image.tmdb.org/t/p/w200/"+link;
-  }
+  if (type == "copertina") {
+    if (value == undefined) {
+      img += "img/no_poster01.png";
+    } else {
+      img += "https://image.tmdb.org/t/p/w200/"+value;
+    }
+  } else if (type == "bandiera") {
+    var flags = ["en", "it", "cs", "de", "es", "fr", "hu", "ja", "ko", "no", "pl", "pt", "sv", "tr"];
+      if (flags.includes(value)) {
+        img += "<img src='img/"+value+".svg' alt=''/>";
+      } else {
+        img += "<span>"+value+"</span>";
+      }
+    }
   return img;
 }
 
 // Funzione immette la bandiera corrispondente alla nazione della lingua orginale
-  function flag(lingua) {
-    return "img/"+lingua+".svg";
+  /*function flag(lingua) {
+    var img = "";
+    var flags = ["en", "it", "cs", "de", "es", "fr", "hu", "ja", "ko", "no", "pl", "pt", "sv", "tr"];
+    if (flags.includes(lingua)) {
+      img += "<img src='img/"+lingua+".svg' alt=''/>";
+  } else {
+    img += "<span>"+lingua+"</span>";
   }
+  return img;
+} */
 
 // Funzione colora stelle a seconda del voto
   function voto(num) {
@@ -147,8 +163,8 @@ function filtroRisultati(type, value) {
     var film = {
       "titolo": title(titolo, 30, "normale"),
       "titoloOriginale": title(titoloOriginale, 30),
-      "img-cop": poster(value[i].poster_path),
-      "img-band": flag(language),
+      "img-cop": image(value[i].poster_path, "copertina"),
+      "img-band": image(language, "bandiera"),
       "lingua": value[i].original_language,
       "valutazione": value[i].vote_average,
       "star": voto(average),
