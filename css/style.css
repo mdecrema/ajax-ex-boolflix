@@ -8,6 +8,10 @@
   display: inline-block;
 }
 
+.hidden {
+  display: none;
+}
+
 .box {
   width: 100vw;
   height: 140px;
@@ -30,6 +34,7 @@
   box-shadow: 0 0 0;
 }
 
+/* Hamburger icon che si mostra in modalità responsive */
 .hamburger {
   width: 80px;
   height: 60px;
@@ -46,6 +51,51 @@
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+}
+
+.profilo {
+  width: 200px;
+  height: 50px;
+  margin-left: 2%;
+  float: left;
+  position: relative;
+}
+
+.box_profilo {
+  width: calc((100% / 3.5) - 4px);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.box_mini {
+  width: calc((100% / 7) - 4px);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.logoProfilo {
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+
+.logoProfilo img {
+  width: 100%;
+  height: 100%;
+}
+
+.bell, .gift, .arrow {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.f_size_arrow {
+  font-size: 15px;
 }
 
 .logo {
@@ -89,8 +139,13 @@
   display: inline-block;
 }
 
-#gen_film, #gen_serie {
+.radio-btn {
   margin-left: 30px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 12px;
 }
 
 /* Menu Nascosto */

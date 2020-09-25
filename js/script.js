@@ -16,15 +16,26 @@ $("#ricercaFilm").keypress(function(event) {
 function ricerca() {
   $(".row").text("");
   var search = $("#ricercaFilm").val().toLowerCase();
+  var radioValue = $("input[name='tipo']:checked").val();
     if (search != "" && isNaN(search)) {
-      movies(search);
-      series(search);
+      //movies(search);
+      //series(search);
+        //console.log(radioValue);
+        if (radioValue == 0) {
+          movies(search);
+        } else if (radioValue == 1) {
+          series(search);
+        } else if (radioValue == 2) {
+          movies(search);
+          series(search);
+        }
       $("#ricercaFilm").val("");
     } else {
       alert("Il titolo inserito non è valido");
       $("#ricercaFilm").val("");
     }
   }
+
 
 // Funzione per abbreviare il titolo nel caso sia più lungo di 30 caratteri
   function title(titolo, num, type) {
@@ -108,7 +119,7 @@ function movies(element2) {
     },
     "method": "GET",
     "success": function(data) {
-      console.log(dataFilms);
+      //console.log(dataFilms);
       var dataFilms = data.results;
       filtroRisultati("film", dataFilms);
     },
@@ -142,13 +153,14 @@ function series(element) {
 // Template film
 function filtroRisultati(type, value) {
   for (i=0; i<=value.length; i++) {
-      console.log(value[i]);
+      //console.log(value[i]);
 
       var average = value[i].vote_average;
       var language = value[i].original_language;
 
       var titolo;
       var release;
+      var titoloOriginale;
 
       if (type == "film") {
         titolo = value[i].title;
@@ -162,7 +174,7 @@ function filtroRisultati(type, value) {
 
     var film = {
       "titolo": title(titolo, 30, "normale"),
-      "titoloOriginale": title(titoloOriginale, 30),
+      "titoloOriginale": title(titoloOriginale, 30, "normale"),
       "img-cop": image(value[i].poster_path, "copertina"),
       "img-band": image(language, "bandiera"),
       "lingua": value[i].original_language,

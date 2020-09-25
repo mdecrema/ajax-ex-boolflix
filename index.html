@@ -20,14 +20,21 @@
           <div class="logo">
             <img id="netflixLogo" src="img/netflixLogo.png" alt="" />
           </div>
-          <div class="hamburger">
+          <div class="hamburger hidden">
             <i class="fas fa-bars hamb_icon"></i>
+          </div>
+          <div class="profilo">
+            <div class="freccina box_mini inline_bl"><i class="fas fa-caret-down arrow f_size_arrow"></i></div>
+            <div class="logoProfilo box_profilo inline_bl"><img class="" src="img/profilo.png" alt="" /></div>
+            <div class="notifiche box_profilo inline_bl"><i class="fas fa-bell bell"></i></div>
+            <div class="bonus box_profilo inline_bl"><i class="fas fa-gift gift"></i></i></div>
           </div>
           <div class="wrapper_input">
             <input id="ricercaFilm" class="inputRicerca" type="input" placeholder="Cerca un titolo"/>
             <button id="cerca" class="btn-cerca" type="submit">CERCA</button>
-          <!--<input id="gen_film" class="" type="checkbox" value="0" checked/> FILM
-          <input id="gen_serie" class="" type="checkbox" value="1" /> SERIE -->
+          <input id="gen_film" class="radio-btn" name="tipo" type="radio" value="0" /><span class="label"> FILM</span>
+          <input id="gen_serie" class="radio-btn" name="tipo" type="radio" value="1" /><span class="label"> SERIE TV</span>
+          <input id="gen_tutto" class="radio-btn" name="tipo" type="radio" value="2" checked/><span class="label"> TUTTO</span>
         </div>
         </div>
       </nav>
