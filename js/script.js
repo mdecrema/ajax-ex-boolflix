@@ -32,11 +32,10 @@ function ricerca() {
     if (type == "normale") {
       add = "...";
     } else if (type == "paragrafo") {
-      add = "...<br><a href=''>continua a leggere</a>";
+      add = "... <a href=''> continua a leggere</a>";
     } else {
       add;
     }
-
 
     var nuovoTesto = "";
     var lunParola = titolo.length;
@@ -50,6 +49,17 @@ function ricerca() {
       return nuovoTesto;
     }
   }
+
+// Funzione che stampa img copertina
+function poster(link) {
+  var img = "";
+  if (link == undefined) {
+    img += "img/no_poster01.png";
+  } else {
+    img += "https://image.tmdb.org/t/p/w200/"+link;
+  }
+  return img;
+}
 
 // Funzione immette la bandiera corrispondente alla nazione della lingua orginale
   function flag(lingua) {
@@ -136,14 +146,14 @@ function filtroRisultati(type, value) {
 
     var film = {
       "titolo": title(titolo, 30, "normale"),
-      "titoloOriginale": title(titolo, 15),
-      "img-cop": "https://image.tmdb.org/t/p/w200/"+value[i].poster_path,
+      "titoloOriginale": title(titoloOriginale, 30),
+      "img-cop": poster(value[i].poster_path),
       "img-band": flag(language),
       "lingua": value[i].original_language,
       "valutazione": value[i].vote_average,
       "star": voto(average),
       "data": title(release, 4, "anno"),
-      "overview": title(value[i].overview, 250, "paragrafo"),
+      "overview": title(value[i].overview, 300, "paragrafo"),
       // Classi css
       "previewFilm": "preview",
       "listaInfo": "lista",
@@ -161,45 +171,6 @@ function filtroRisultati(type, value) {
   }
 }
 
-
-// Template serie tv
-/*
-function filtroSeries(value2) {
-  for (i=0; i<=value2.length; i++) {
-      console.log(value2[i]);
-
-    var language2 = value2[i].original_language;
-    var average = value2[i].vote_average;
-
-    var serie = {
-      "titolo": title(value2[i].name, 30),
-      "titoloOriginale": title(value2[i].original_name, 15),
-      "img-cop": "https://image.tmdb.org/t/p/w200/"+value2[i].poster_path,
-      "img-band": flag(language2),
-      "lingua": value2[i].original_language,
-      "valutazione": value2[i].vote_average,
-      "star": voto(average),
-      // Classi css
-      "previewFilm": "preview",
-      "listaInfo": "lista",
-      "bandiera": "flag",
-      "voto": "votazione",
-      "informazioni": "info"
-    }
-
-    // Stampo i risultati nel template
-    var source = $("#entry-template").html();
-    var template = Handlebars.compile(source);
-
-    var contenuto = template(serie);
-
-    $(".row").append(contenuto);
-    $("#ricercaFilm").val("");
-    $(this).addClass("active");
-  }
-}*/
-
-// Animazioni grafiche
 // Animazione menu
 $(".nav_bar").mouseenter(function() {
   apriMenu();
@@ -226,15 +197,6 @@ function chiudiMenu() {
   $(".menu").css({marginTop: "0px"});
   $(".nav_bar").css({borderBottom: "8px solid #5A0505"});
 }
-
-/*function animationText() {
-  setTimeout(function() {
-    setInterval(function() {
-
-    },4000);
-}, 2000);
-}*/
-
 
   // Fine codice
 })

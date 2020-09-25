@@ -55,16 +55,15 @@
       </div>
     </div>
 
-    <!-- Template preview film -->
+    <!-- Template preview film/serie -->
     <script id="entry-template" type="text/x-handlebars-template">
 
     <div class="{{previewFilm}}">
-      <div class="titolo_copertina">
-        <h3>{{titolo}}</h3>
-        <h4 class="f-size">{{titoloOriginale}}</h4>
-      </div>
         <div class="copertina"><img id="cop" src="{{img-cop}}" alt="" /></div>
-        <div class="descrizione">{{{overview}}}
+        <div class="descrizione">
+            <h3>{{titolo}}</h3>
+            <h4>{{titoloOriginale}}</h4>
+            <p>{{{overview}}}</p>
           <div class="{{informazioni}}">
             Lingua: <img class="{{bandiera}}" src="{{img-band}}" alt="{{lingua}}"/><br />
             {{valutazione}} {{{star}}}<br />
