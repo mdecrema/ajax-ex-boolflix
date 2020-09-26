@@ -61,18 +61,20 @@
   position: relative;
 }
 
-.box_profilo {
+.box_tools {
   width: calc((100% / 3.5) - 4px);
   height: 100%;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 
-.box_mini {
+.box_arrow {
   width: calc((100% / 7) - 4px);
   height: 100%;
   overflow: hidden;
   position: relative;
+  cursor: pointer;
 }
 
 .logoProfilo {
@@ -179,9 +181,6 @@
   transition: 0.6s;
 }
 
-.menu ul li:hover {
-  font-size: 24px;
-}
 
 /* Contenitore delle liste di film e serie */
 .film-wrapper {
@@ -210,6 +209,25 @@ h1 {
   font-family: 'Parisienne', cursive;
   font-size: 100px;
   color: #fff;
+}
+
+.animation {
+  width: 600px;
+  height: 200px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.text_anim {
+  font-size: 150px;
+  font-family: 'Bebas Neue', cursive;
+  margin-left: 3%;
+  color: red;
+  opacity: 0;
+  text-shadow: 10px 10px 0 #000;
 }
 
 .row {

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+animation();
 // Evento click su bottone 'cerca'
 $("#cerca").click(function() {
   ricerca();
@@ -17,19 +17,24 @@ function ricerca() {
   $(".row").text("");
   var search = $("#ricercaFilm").val().toLowerCase();
   var radioValue = $("input[name='tipo']:checked").val();
+  var genere = "";
     if (search != "" && isNaN(search)) {
       //movies(search);
       //series(search);
         //console.log(radioValue);
         if (radioValue == 0) {
           movies(search);
+          genere = "Film";
         } else if (radioValue == 1) {
           series(search);
+          genere = "Serie tv";
         } else if (radioValue == 2) {
           movies(search);
           series(search);
+          genere = "All results";
         }
       $("#ricercaFilm").val("");
+      changeTitle(genere);
     } else {
       alert("Il titolo inserito non è valido");
       $("#ricercaFilm").val("");
@@ -119,7 +124,7 @@ function movies(element2) {
     },
     "method": "GET",
     "success": function(data) {
-      //console.log(dataFilms);
+      console.log(dataFilms);
       var dataFilms = data.results;
       filtroRisultati("film", dataFilms);
     },
@@ -140,7 +145,7 @@ function series(element) {
     },
     "method": "GET",
     "success": function(data) {
-      //console.log(data);
+      console.log(data);
       var dataSeries= data.results;
       filtroRisultati("serie", dataSeries);
     },
@@ -153,7 +158,7 @@ function series(element) {
 // Template film
 function filtroRisultati(type, value) {
   for (i=0; i<=value.length; i++) {
-      //console.log(value[i]);
+      console.log(value[i]);
 
       var average = value[i].vote_average;
       var language = value[i].original_language;
@@ -199,6 +204,12 @@ function filtroRisultati(type, value) {
   }
 }
 
+// Funzione cambia titolo principale
+function changeTitle(genere) {
+  var titolo = $(".titolo h1");
+  return titolo.text(genere);
+}
+
 // Animazione menu
 $(".nav_bar").mouseenter(function() {
   apriMenu();
@@ -208,6 +219,7 @@ $(".box").mouseout(function() {
   chiudiMenu();
 })
 
+// Funzione apertuta menu
 function apriMenu() {
   var counter = 0;
   setInterval(function() {
@@ -221,9 +233,94 @@ function apriMenu() {
 }, 5);
 }
 
+// Funzione chiusura menu
 function chiudiMenu() {
   $(".menu").css({marginTop: "0px"});
   $(".nav_bar").css({borderBottom: "8px solid #5A0505"});
+}
+
+// Funzione animazione apertura pagina
+function animation() {
+  switchOn();
+  switchOff();
+}
+
+// Funzione incremento opacità
+function letteraOn(lettera) {
+  var classe = $("."+lettera);
+  var counter1 = 0;
+  setInterval(function() {
+  if (counter1 == 9) {
+    clearInterval();
+  } else {
+    counter1 ++;
+  classe.css({opacity: "0."+counter1});
+}
+}, 280);
+}
+
+// Funzione decremento opactià
+function letteraOff(lettera) {
+  var classe = $("."+lettera);
+  var counter2 = 9;
+  setInterval(function() {
+  if (counter2 == 0) {
+    clearInterval();
+  } else {
+    counter2 --;
+  classe.css({opacity: "0."+counter2});
+}
+}, 150);
+}
+
+// TimeOut in entrata
+function switchOn() {
+  setTimeout(function() {
+    letteraOn("n");
+  }, 1500);
+  setTimeout(function() {
+    letteraOn("e");
+  }, 1800);
+  setTimeout(function() {
+    letteraOn("t");
+  }, 2100);
+  setTimeout(function() {
+    letteraOn("f");
+  }, 2400);
+  setTimeout(function() {
+    letteraOn("l");
+  }, 2700);
+  setTimeout(function() {
+    letteraOn("i");
+  }, 3000);
+  setTimeout(function() {
+    letteraOn("x");
+  }, 3300);
+}
+
+// TimeOut in uscita
+function switchOff() {
+  setTimeout(function() {
+    letteraOff("n");
+  }, 5200);
+  setTimeout(function() {
+    letteraOff("e");
+  }, 5400);
+  setTimeout(function() {
+    letteraOff("t");
+  }, 5600);
+  setTimeout(function() {
+    letteraOff("f");
+  }, 5800);
+  setTimeout(function() {
+    letteraOff("l");
+  }, 6000);
+  setTimeout(function() {
+    letteraOff("i");
+  }, 6200);
+  setTimeout(function() {
+    letteraOff("x");
+  }, 6400);
 }
 
   // Fine codice
