@@ -230,6 +230,81 @@ h1 {
   text-shadow: 10px 10px 0 #000;
 }
 
+.login {
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #194A59;
+}
+
+.scelta {
+  width: calc(50% - 3px);
+  height: 100%;
+  text-align: center;
+  line-height: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  color: grey;
+}
+
+.scelta.active {
+  background-color: #194A59;
+  color: #fff;
+}
+
+.credenziali {
+  width: 100%;
+  height: 85%;
+  padding: 10% 5%;
+}
+
+.sceltaAcesso {
+  width: 400px;
+  height: 15%;
+}
+
+.box_label {
+  width: calc(30% - 4px);
+  height: 20px;
+}
+
+.box_input {
+  width: 70%;
+  height: 50px;
+}
+
+.credenziali_label {
+  font-size: 18px;
+  color: #fff;
+}
+
+.datiAccesso {
+  width: 100%;
+  height: 30px;
+  font-size: 18px;
+  padding: 2px 5px;
+}
+
+.btn-accedi {
+  width: 100%;
+  height: 30px;
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  background-color: #507581;
+}
+
+/*.credenziali {
+  width: 90%;
+  height: 90%;
+  border: 1px solid green;
+}*/
+
 .row {
   width: 90%;
   height: calc(100vh / 2);

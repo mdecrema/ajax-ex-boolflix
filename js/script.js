@@ -34,6 +34,7 @@ function ricerca() {
           genere = "All results";
         }
       $("#ricercaFilm").val("");
+      $(".login").fadeOut();
       changeTitle(genere);
     } else {
       alert("Il titolo inserito non è valido");
@@ -256,7 +257,7 @@ function letteraOn(lettera) {
     counter1 ++;
   classe.css({opacity: "0."+counter1});
 }
-}, 280);
+}, 220);
 }
 
 // Funzione decremento opactià
@@ -321,6 +322,9 @@ function switchOff() {
   setTimeout(function() {
     letteraOff("x");
   }, 6400);
+  setTimeout(function() {
+    $(".login").removeClass("hidden");
+  }, 8000);
 }
 
   // Fine codice
