@@ -1,5 +1,15 @@
 $(document).ready(function() {
 animation();
+$(".freccina").click(function() {
+  menuProfilo("apri");
+})
+$(".logoProfilo").click(function() {
+  menuProfilo("apri");
+})
+$(".film-wrapper").click(function() {
+  menuProfilo("chiudi");
+})
+
 // Evento click su bottone 'cerca'
 $("#cerca").click(function() {
   ricerca();
@@ -211,6 +221,15 @@ function changeTitle(genere) {
   return titolo.text(genere);
 }
 
+// Menu profilo
+function menuProfilo(stato) {
+  if (stato == "apri") {
+    $(".menu_arrow").removeClass("hidden");
+  } else if (stato == "chiudi") {
+    $(".menu_arrow").addClass("hidden");
+  }
+}
+
 // Animazione menu
 $(".nav_bar").mouseenter(function() {
   apriMenu();
@@ -257,7 +276,7 @@ function letteraOn(lettera) {
     counter1 ++;
   classe.css({opacity: "0."+counter1});
 }
-}, 220);
+}, 200);
 }
 
 // Funzione decremento opactià
