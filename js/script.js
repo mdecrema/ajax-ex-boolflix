@@ -13,12 +13,14 @@ $(".film-wrapper").click(function() {
 // Evento click su bottone 'cerca'
 $("#cerca").click(function() {
   ricerca();
+  menuProfilo("chiudi");
 })
 
 // Evento keypress su tasto 'invio'
 $("#ricercaFilm").keypress(function(event) {
   if (event.which == 13) {
     ricerca();
+    menuProfilo("chiudi");
   }
 });
 
@@ -96,18 +98,6 @@ function image(value, type) {
     }
   return img;
 }
-
-// Funzione immette la bandiera corrispondente alla nazione della lingua orginale
-  /*function flag(lingua) {
-    var img = "";
-    var flags = ["en", "it", "cs", "de", "es", "fr", "hu", "ja", "ko", "no", "pl", "pt", "sv", "tr"];
-    if (flags.includes(lingua)) {
-      img += "<img src='img/"+lingua+".svg' alt=''/>";
-  } else {
-    img += "<span>"+lingua+"</span>";
-  }
-  return img;
-} */
 
 // Funzione colora stelle a seconda del voto
   function voto(num) {
@@ -235,7 +225,7 @@ $(".nav_bar").mouseenter(function() {
   apriMenu();
 })
 
-$(".box").mouseout(function() {
+$(".film-wrapper").mouseenter(function() {
   chiudiMenu();
 })
 
